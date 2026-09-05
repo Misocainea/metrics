@@ -58,18 +58,69 @@ Report.Section.ChatReports = function()
 
         -- The early returns are necessary for crash prevention.
         UI.TableNextRow()
-        UI.TableNextColumn() if UI.Button('Overall     ') then Report.Publishing.Overall() return end
+
+        UI.TableNextColumn()
+        if UI.Button('Overall     ') then
+            ashita.tasks.once(0, function()
+                Report.Publishing.Overall()
+            end)
+            return
+        end
+
         UI.TableNextColumn()
         UI.TableNextColumn()
         UI.TableNextColumn()
+
         --
-        UI.TableNextColumn() if UI.Button('Melee       ') then Report.Publishing.DamageByType(DB.Trackable.MELEE_OVERALL) return end
-        UI.TableNextColumn() if UI.Button('Weaponskills') then Report.Publishing.DamageByType(DB.Trackable.WEAPONSKILL) return end
-        UI.TableNextColumn() if UI.Button('Magic       ') then Report.Publishing.DamageByType(DB.Trackable.SPELLS_OVERALL) return end
-        UI.TableNextColumn() if UI.Button('Pet         ') then Report.Publishing.DamageByType(DB.Trackable.PET_OVERALL) return end
+        UI.TableNextColumn()
+        if UI.Button('Melee       ') then
+            ashita.tasks.once(0, function()
+                Report.Publishing.DamageByType(DB.Trackable.MELEE_OVERALL)
+            end)
+            return
+        end
+
+        UI.TableNextColumn()
+        if UI.Button('Weaponskills') then
+            ashita.tasks.once(0, function()
+                Report.Publishing.DamageByType(DB.Trackable.WEAPONSKILL)
+            end)
+            return
+        end
+
+        UI.TableNextColumn()
+        if UI.Button('Magic       ') then
+            ashita.tasks.once(0, function()
+                Report.Publishing.DamageByType(DB.Trackable.SPELLS_OVERALL)
+            end)
+            return
+        end
+
+        UI.TableNextColumn()
+        if UI.Button('Pet         ') then
+            ashita.tasks.once(0, function()
+                Report.Publishing.DamageByType(DB.Trackable.PET_OVERALL)
+            end)
+            return
+        end
+
         --
-        UI.TableNextColumn() if UI.Button('Abilities   ') then Report.Publishing.DamageByType(DB.Trackable.ABILITY_DAMAGING) return end
-        UI.TableNextColumn() if UI.Button('Healing     ') then Report.Publishing.DamageByType(DB.Trackable.ALL_HEAL) return end
+        UI.TableNextColumn()
+        if UI.Button('Abilities   ') then
+            ashita.tasks.once(0, function()
+                Report.Publishing.DamageByType(DB.Trackable.ABILITY_DAMAGING)
+            end)
+            return
+        end
+
+        UI.TableNextColumn()
+        if UI.Button('Healing     ') then
+            ashita.tasks.once(0, function()
+                Report.Publishing.DamageByType(DB.Trackable.ALL_HEAL)
+            end)
+            return
+        end
+
         UI.TableNextColumn()
         UI.TableNextColumn()
 

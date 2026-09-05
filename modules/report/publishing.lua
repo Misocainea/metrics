@@ -5,8 +5,8 @@ Report.Publishing.Lock      = false                -- Stops multiple reports fro
 Report.Publishing.ChatIndex = 1
 Report.Publishing.ChatMode  = Ashita.Chat.Modes[1] -- Party
 
--- The screen flickers when publishing to the chat. I think it has to do with the sleep after each line.
--- The sleep is necessary because the chat can only accept inputs at a certain rate.
+-- The screen flickers when publishing to the chat. I think it has to do with the coroutine.sleep after each line.
+-- The coroutine.sleep is necessary because the chat can only accept inputs at a certain rate.
 
 ------------------------------------------------------------------------------------------------------
 -- Sends a report of total damage to game chat.
