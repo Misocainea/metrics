@@ -25,9 +25,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -- Horizon Approved Addon 0457
 
-addon.author  = 'Metra'
+addon.author  = 'Metra  Reporting patch by Brattycatty'
 addon.name    = 'Metrics'
-addon.version = '2026-04-17'
+addon.version = '2026-09-05'
 
 _Globals = { }
 _Globals.Initialized = false
