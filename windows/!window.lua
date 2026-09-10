@@ -56,7 +56,9 @@ function Window:New(initSettings)
         self.CheckPosition()
         self.SetScaling()
 
-        if UI.Begin(title, isVisible, flags) then
+        local shouldDraw = UI.Begin(title, isVisible, flags)
+
+        if shouldDraw then
             self.UpdateSettings()
             self.SetLegacyScaling()
 
@@ -67,8 +69,9 @@ function Window:New(initSettings)
             end
 
             self.SetLegacyScaling(globalScaling)
-            UI.End()
         end
+
+        UI.End()
 
         WindowManager.PopThemeElements()
         self.SetScaling(globalScaling)
